@@ -1,4 +1,4 @@
-package handlerexceptions;
+package cource_project_money_transfer_service.demo.handlerexceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
