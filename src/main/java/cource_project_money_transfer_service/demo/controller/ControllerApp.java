@@ -1,9 +1,10 @@
 package cource_project_money_transfer_service.demo.controller;
 
-import cource_project_money_transfer_service.demo.model.DataCard;
+import cource_project_money_transfer_service.demo.model.CardRequest;
+import cource_project_money_transfer_service.demo.service.ConfirmOperationService;
 import cource_project_money_transfer_service.demo.service.TransferService;
-import cource_project_money_transfer_service.demo.service.TransferServiceConfirOperation;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,22 +12,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/transfer")
 public class ControllerApp {
     private final TransferService transferService;
-    private final TransferServiceConfirOperation transferServiceConfirOperation;
+    private final ConfirmOperationService confirmOperationService;
 
-    public ControllerApp(TransferService transferService, TransferServiceConfirOperation transferServiceConfirOperation) {
+    public ControllerApp(TransferService transferService, ConfirmOperationService confirmOperationService) {
         this.transferService = transferService;
-        this.transferServiceConfirOperation = transferServiceConfirOperation;
+        this.confirmOperationService = confirmOperationService;
     }
 
-    @PostMapping("/{dataCard}")
-    public String getValidateCard(@CardValidator DataCard dataCard) {
-
-        return transferService.getValidateCard(dataCard);
+    @PostMapping("/transfer")
+    public String getValidationTransferCard(@RequestBody CardRequest cardRequest) {
+        return transferService.getValidationTransferCard(cardRequest);
     }
 
     @PostMapping("/confirmOperation")
-    public String getDateConfirm(String operationId) {
-        return transferServiceConfirOperation.getConfirmOperation(operationId);
+    public String getDateConfirm(@RequestBody String operationId, String code) {
+        return confirmOperationService.getOperation(operationId, code);
     }
+
 
 }

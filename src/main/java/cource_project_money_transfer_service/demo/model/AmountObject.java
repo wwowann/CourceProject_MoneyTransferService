@@ -4,6 +4,11 @@ public class AmountObject {
     private int value;
     private String currency;
 
+    public AmountObject(int value, String currency) {
+        this.value = value;
+        this.currency = currency;
+    }
+
     public int getValue() {
         return value;
     }
@@ -20,8 +25,5 @@ public class AmountObject {
         this.currency = currency;
     }
 
-    public AmountObject(int value, String currency) {
-        this.value = value;
-        this.currency = currency;
-    }
+
 }

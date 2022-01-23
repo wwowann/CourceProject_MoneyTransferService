@@ -2,32 +2,37 @@ package cource_project_money_transfer_service.demo.model;
 
 import java.util.Objects;
 
-public class DataCard {
+public class CardRequest {
     private final String cardFromNumber;
     private final String cardFromValidTill;
     private final String cardFromCVV;
     private final String cardToNumber;
     private AmountObject amount;
-    private final String verificationCode;
+    private String operationId;
 
-
-    public DataCard(String cardFromNumber, String cardFromValidTill, String cardFromCVV,
-                    String cardToNumber, AmountObject amount) {
+    public CardRequest (String cardFromNumber, String cardFromValidTill, String cardFromCVV,
+                    String cardToNumber, AmountObject amount, String operationId) {
         this.cardFromNumber = cardFromNumber;
         this.cardFromValidTill = cardFromValidTill;
         this.cardFromCVV = cardFromCVV;
         this.cardToNumber = cardToNumber;
         this.amount = amount;
-        verificationCode = "0000";
+        this.operationId = operationId;
 
     }
 
-    public String getVerificationCode(){
-        return verificationCode;
+    public String getOperationId() {
+        return operationId;
     }
+
+    public void setOperationId(String operationId) {
+        this.operationId = operationId;
+    }
+
     public String getCardToNumber() {
         return cardToNumber;
     }
+
     public String getCardFromNumber() {
         return cardFromNumber;
     }
@@ -48,12 +53,13 @@ public class DataCard {
         this.amount = amount;
     }
 
-      @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof DataCard)) return false;
-        DataCard dataCard = (DataCard) o;
-        return Objects.equals(cardFromNumber, dataCard.cardFromNumber) && cardFromValidTill.equals(dataCard.cardFromValidTill) && cardFromCVV.equals(dataCard.cardFromCVV);
+        if (!(o instanceof CardRequest)) return false;
+        CardRequest cardRepository = (CardRequest) o;
+        return Objects.equals(cardFromNumber, cardRepository.cardFromNumber) &&
+                cardFromValidTill.equals(cardRepository.cardFromValidTill) && cardFromCVV.equals(cardRepository.cardFromCVV);
     }
 
     @Override
