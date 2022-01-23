@@ -1,6 +1,5 @@
 package cource_project_money_transfer_service.demo.service;
 
-import cource_project_money_transfer_service.demo.exception.ErrorConfirmation;
 import cource_project_money_transfer_service.demo.handlerexceptions.InvalidRequest;
 import cource_project_money_transfer_service.demo.model.CardRequest;
 import cource_project_money_transfer_service.demo.repository.CardRepository;
