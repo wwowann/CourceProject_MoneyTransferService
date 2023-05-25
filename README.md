@@ -5,7 +5,7 @@
 
 Заранее подготовленное веб-приложение (FRONT) подключается к разработанному сервису без доработок и его функционал используется для перевода денег.
 
-Весь API FRONT описан в соответствии YAML файла по спецификации OpenAPI (подробнее по ![ссылке 1](https://swagger.io/specification/) и ![ссылке2](https://starkovden.github.io/introduction-openapi-and-swagger.html)).
+Весь API FRONT описан в соответствии YAML файла по спецификации OpenAPI (подробнее по [ссылке 1](https://swagger.io/specification/) и [ссылке2](https://starkovden.github.io/introduction-openapi-and-swagger.html)).
 
 ### Требования к приложению
 * сервис предоставляет REST-интерфейс для интеграции с FRONT.
